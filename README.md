@@ -83,3 +83,12 @@
 
 Congratulations, you've now set up and run a PWR Chain validator node!
 
+# GÜNCELLEME İÇİN AŞŞAĞIDAKİLERLE İLERLEYİNİZ.
+```bash
+SERVER_IP=$(hostname -I | awk '{print $1}') && \
+sudo rm -rf validator.jar config.json && \
+wget https://github.com/pwrlabs/PWR-Validator-Node/raw/main/validator.jar && \
+wget https://github.com/pwrlabs/PWR-Validator-Node/raw/main/config.json && \
+sudo pkill -f java && \
+sudo java -jar validator.jar password "$SERVER_IP" --compression-level 0
+```
